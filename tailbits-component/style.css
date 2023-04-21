@@ -93,6 +93,8 @@
     flex-direction: column;
 }
 
+
+
 .front-page .text a {
     background-color: rgb(37, 99, 234);
     text-decoration: none;
@@ -135,8 +137,10 @@
 
 .front-page .benefits p {
     display: flex;
-    width: 100%;
+    width: 50%;
+
 }
+
 
 
 
