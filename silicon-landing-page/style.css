@@ -1,0 +1,213 @@
+* {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+}
+
+.front {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    height: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.front img {
+    width: 100%;
+    height: 900px;
+    object-fit: cover;
+    opacity: 0.4;
+}
+
+.text {
+    position: absolute;
+    width: 70%;
+    color: white;
+    height: 400px;
+    text-align: center;
+    margin: 0 auto;
+    z-index: 2;
+}
+
+.text h1 {
+    font-size: 70px;
+}
+
+.text h3 {
+    color: rgb(223, 223, 223);
+    font-size: 20px;
+    font-weight: 100;
+    margin-top: 2vh
+}
+
+.text button {
+    margin-top: 5vh;
+    color: white;
+    background-color: rgb(121, 123, 255);
+    font-size: 16px;
+    font-weight: 600;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.text button:hover {
+    transition: background-color 0.3s;
+    background-color: rgb(64, 68, 238);
+}
+
+.text button:not(:hover) {
+    transition: 0.3s;
+}
+
+.second {
+    max-width: 93%;
+    margin: 0 auto;
+    margin-top: 10vh;
+    display: flex;
+    justify-content: center;
+}
+
+.second img {
+    max-width: 500px;
+}
+
+.second .texti {
+    max-width: 40%;
+    margin-right: 10vh;
+}
+
+.second .texti h1 {
+    font-size: 40px;
+}
+
+.second .texti h3 {
+    color: rgb(92, 92, 92);
+    font-size: 15px;
+    font-weight: 400;
+    margin-top: 3vh;
+}
+
+
+.second .texti h4 {
+    margin-top: 5vh;
+}
+
+.second img {
+    margin-top: 2vh;
+}
+
+.second .texti button {
+    margin-top: 5vh;
+    color: white;
+    background-color: rgb(121, 123, 255);
+    font-size: 16px;
+    font-weight: 600;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.second .texti button:hover {
+    transition: background-color 0.3s;
+    background-color: rgb(64, 68, 238);
+}
+
+.second .texti button:not(:hover) {
+    transition: 0.3s;
+}
+
+.sec-3 {
+    background-color: rgb(243, 246, 255);
+    width: 100%;
+    margin: 0 auto;
+}
+
+.sec-3 h1 {
+    font-size: 45px
+}
+
+.sec-3 p {
+    color: rgb(170, 170, 170);
+}
+
+.services {
+    margin-top: 7vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10vh;
+}
+
+.butt {
+    margin-top: 3vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.butt p {
+    max-width: 65%;
+
+}
+
+.butt button {
+    color: rgb(121, 123, 255);
+    background-color: transparent;
+    border: 1px solid rgba(121, 123, 255, 0.363);
+    font-size: 16px;
+    font-weight: 600;
+    padding: 15px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+
+}
+
+.butt button:hover {
+    transition: 0.2s;
+    background-color: rgb(121, 123, 255);
+    color: white;
+}
+
+.butt button:not(hover) {
+    transition: 0.2s;
+}
+
+.sec-3 {
+    margin-top: -4vh;
+    padding-top: 4vh;
+}
+
+.centrar {
+    max-width: 70%;
+    margin: 0 auto;
+}
+
+.sec-3 article {
+    background-color: rgb(255, 255, 255);
+    padding: 40px 40px;
+    border-radius: 6px;
+    box-shadow: 0px 1px 10px 1px rgba(0, 0, 0, 0.13);
+}
+
+.sec-3 article:hover {
+    transition: 0.2s;
+    transform: scale(1.04);
+    cursor: pointer;
+}
+
+.sec-3 article:not(hover) {
+    transition: 0.3s;
+}
+
+.sec-3 article img {
+    background-color: rgb(99, 102, 241);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: -10vh;
+    box-shadow: 0px 1px 10px 1px rgb(99, 102, 241);
+
+}
