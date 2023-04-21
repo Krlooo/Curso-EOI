@@ -54,6 +54,13 @@
     border: none;
     border-radius: 10px;
     cursor: pointer;
+    position: relative;
+    padding-right: 50px;
+}
+
+.material-symbols-outlined {
+    position: absolute;
+    margin-left: 10px;
 }
 
 .text button:hover {
