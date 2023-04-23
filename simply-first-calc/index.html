@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simply calc</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <main class="bg-yellow-800 w-screen h-screen flex justify-center items-center">
+        <div class="calc bg-gray-300 w-60 h-1/2">
+            <div class=" bg-black h-1/4 flex justify-center items-center">
+                <p id="screen"
+                    class=" bg-white w-screen flex  justify-end text-4xl text-center ml-5 mr-5 rounded h-1/2 items-center">
+                </p>
+            </div>
+            <div class="pad h-full text-6xl mt-10">
+                <div class="row-2 border">
+                    <button class="cursor-pointer">7</button>
+                    <button class="cursor-pointer">8</button>
+                    <button class="cursor-pointer">9</button>
+                    <button class="cursor-pointer">+</button>
+                </div>
+                <div class="row-2 border">
+                    <button class="cursor-pointer">4</button>
+                    <button class="cursor-pointer">5</button>
+                    <button class="cursor-pointer">6</button>
+                    <button class="cursor-pointer">-</button>
+                </div>
+                <div class="row-3 border">
+                    <button class="cursor-pointer">1</button>
+                    <button class="cursor-pointer">2</button>
+                    <button class="cursor-pointer">3</button>
+                    <button class="cursor-pointer  ">*</button>
+                </div>
+                <div class="row-4 border">
+                    <button class="cursor-pointer">0</button>
+                    <button class="pl-2 pr-2 cursor-pointer">.</button>
+                    <button class="cursor-pointer">/</button>
+                    <button class="bg-red-400 pb-2 pr-3 pl-3 rounded-full cursor-pointer">=</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="main.js"></script>
+</body>
+
+</html>
