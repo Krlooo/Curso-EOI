@@ -1,15 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
 </head>
 
 <body>
-
+    <main class="bg-yellow-400 min-h-screen">
+        <header class="flex p-4 justify-between items-center max-w-4xl mx-auto pl-1 pr-3">
+            <div class="flex text-2xl font-bold items-center">
+                <p>Vota</p>
+                <p class="text-yellow-400 bg-black pr-1 pl-1 max-h-8">dev</p>
+            </div>
+            <a class="font-bold flex bg-black text-white gap-2 px-4 py-2 rounded" href="https://google.es/"><img
+                    class="w-6 h-6 invert" src="public/github.png" alt="">Iniciar
+                sesión</a>
+        </header>
+        <section class="mt-36 max-w-5xl mx-auto text-center">
+            <h1 class="text-8xl font-extrabold">Vota los mejores del desarrollo web</h1>
+            <h2 class="pt-7 text-2xl max-w-xl mx-auto font-normal">Decide qué stack, tecnologías y frameworks han sido
+                los
+                mejores
+                del año.
+                ¡Cada
+                voto cuenta!
+            </h2>
+        </section>
+    </main>
 </body>
 
 </html>
