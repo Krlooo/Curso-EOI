@@ -6,16 +6,13 @@ const p_temp = document.getElementById('p_temp');
 const img_temp = document.getElementById('img_temp');
 const p_location = document.getElementById('p_location');
 
-searchBtn.addEventListener('click', () => {
-    let inputValue = searchInput.value;
-    if (inputValue.length > 1) {
-        console.log(searchInput.value);
+searchInput.addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
         getWeather(searchInput.value);
-        screenMain.className += " h-96";
-        weatherScreen.classList.toggle('hidden');
     }
-
 });
+searchBtn.addEventListener('click', getWeather(searchInput.value));
 
 async function getWeather(location = "Madrid") {
     const url = "https://weatherapi-com.p.rapidapi.com/current.json?q=" + location;
@@ -32,7 +29,6 @@ async function getWeather(location = "Madrid") {
         const response = await fetch(url, options);
         const result = await response.text();
         const resultData = JSON.parse(result);
-
         const locationName = resultData.location.name;
         const condition = resultData.current.condition.text;
         const wind_mph = resultData.current.wind_mph;
@@ -41,15 +37,26 @@ async function getWeather(location = "Madrid") {
         const temp = resultData.current.temp_c
         console.log(result);
         p_location.innerText = locationName;
-        p_temp.innerText = temp
+        p_temp.innerText = temp + " °C";
         img_temp.src = icon;
+        printOnscreen()
     } catch (error) {
-        console.error(error);
+        getWeather(location = "Madrid");
     }
 };
 
 
 
 function printOnscreen() {
+    let inputValue = searchInput.value;
+    if (inputValue.length > 1) {
+        console.log(searchInput.value);
+        console.log(weatherScreen.classList.contains('hidden') && screenMain.classList.contains('h-96'))
 
+        if (weatherScreen.classList.contains('hidden') && !(screenMain.classList.contains('h-96'))) {
+            weatherScreen.classList.toggle('hidden');
+            screenMain.className += " h-96";
+
+        };
+    }
 }
