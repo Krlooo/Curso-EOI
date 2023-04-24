@@ -5,7 +5,8 @@ const weatherScreen = document.getElementById('weatherScreen');
 const p_temp = document.getElementById('p_temp');
 const img_temp = document.getElementById('img_temp');
 const p_location = document.getElementById('p_location');
-
+const p_wind = document.getElementById('p_wind');
+const p_feels = document.getElementById('p_feels');
 
 
 searchBtn.addEventListener('click', () => {
@@ -36,14 +37,17 @@ async function getWeather(location = "Madrid") {
         const resultData = JSON.parse(result);
         const locationName = resultData.location.name;
         const condition = resultData.current.condition.text;
-        const wind_mph = resultData.current.wind_mph;
+        const wind_mph = resultData.current.wind_kph;
         const feelslike_c = resultData.current.feelslike_c;
         const icon = resultData.current.condition.icon
         const temp = resultData.current.temp_c
         console.log(result);
+        img_temp.src = icon;
         p_location.innerText = locationName;
         p_temp.innerText = temp + " °C";
-        img_temp.src = icon;
+        p_feels.innerText = feelslike_c + " °C";
+        p_wind.innerText = wind_mph + " KM/H";
+
         printOnscreen()
     } catch (error) {
         getWeather(location = "Madrid");
