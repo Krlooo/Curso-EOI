@@ -6,13 +6,18 @@ const p_temp = document.getElementById('p_temp');
 const img_temp = document.getElementById('img_temp');
 const p_location = document.getElementById('p_location');
 
+
+
+searchBtn.addEventListener('click', () => {
+    getWeather(searchInput.value);
+});
 searchInput.addEventListener("keypress", function (event) {
     if (event.key === "Enter") {
         event.preventDefault();
         getWeather(searchInput.value);
     }
 });
-searchBtn.addEventListener('click', getWeather(searchInput.value));
+
 
 async function getWeather(location = "Madrid") {
     const url = "https://weatherapi-com.p.rapidapi.com/current.json?q=" + location;
