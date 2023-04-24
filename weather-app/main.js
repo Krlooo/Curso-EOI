@@ -63,8 +63,10 @@ function printOnscreen() {
         console.log(weatherScreen.classList.contains('hidden') && screenMain.classList.contains('h-96'))
 
         if (weatherScreen.classList.contains('hidden') && !(screenMain.classList.contains('h-96'))) {
+
             weatherScreen.classList.toggle('hidden');
             screenMain.className += " h-96";
+
 
         };
     }

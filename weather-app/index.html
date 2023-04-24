@@ -14,9 +14,9 @@
 <body>
     <main class="bg-gradient-to-r from-[#6441a5] to-[#2a0845] w-screen h-screen flex items-center justify-center">
         <section id="screenMain"
-            class="transition-all  duration-1000  flex flex-col justify-center items-center overflow-hidden bg-[#185a9d] h-1/6   w-8/12 max-w-2xl shadow-2xl rounded border border-black border-2">
+            class=" overflow-hidden bg-[#185a9d] h-1/6 duration-500 transition-all w-8/12 max-w-2xl shadow-2xl rounded border border-black border-2">
 
-            <div class="transition-all w-fit mx-auto">
+            <div class="relative transition-all w-fit mx-auto mt-10 text-center flex justify-center">
                 <article class="w-10/12 h-16 flex justify-between items-center">
                     <input type="text" id="searchInput"
                         class=" text-center transition-all h-16 w-8/12 flex items-center text-[#6441a5] text-4xl border-2 border-black font-bold uppercase">
@@ -27,7 +27,7 @@
                         </span></button>
                 </article>
             </div>
-            <div id="weatherScreen" class="h-56 w-max hidden transition-all p-10">
+            <div id="weatherScreen" class="h-fit ml-5 w-max hidden transition-all duration-1000 p-10">
                 <div class="text-center flex justify-center font-bold text-4xl w-fit mx-auto  bg-gray-100 rounded-full">
                     <h1 id="p_location"
                         class="text-transparent bg-clip-text bg-gradient-to-r from-red-900 to-yellow-900 py-2 px-10">
