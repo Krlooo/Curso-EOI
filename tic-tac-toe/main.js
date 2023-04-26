@@ -82,26 +82,54 @@ function checkWinner() {
         }
     }
 }
-function simulateWin(winnerCell, oCell) {
+function simulateWin(emptyCells, oCell) {
     for (i in winner) {
         let simulated = [];
         const win = winner[i]
         for (pos in posX) {
-            if (posX.every(poos => win[i] == poos) && ) {
-                simulated.push(posX[pos])
-            }
-            return oCell;
-        }
+            console.log(posX.length)
+            if (posX.length == 1) {
+                console.log("estea" + posX.length)
+                if (win.includes(posX[pos]) && win.includes(oCell)) {
+                    return oCell;
+                } else {
+                    console.log("else if 1" + oCell);
+                };
+            } else {
+
+
+                if (pos == 0 && (win.includes(posX[pos]) && win.includes(posX[pos + 1]) && win.includes(oCell))) {
+                    console.log("else if 3 " + posX[pos + 1])
+                    console.log("else if 3 " + posX[pos])
+                    console.log("else if 3 " + oCell)
+                    return oCell;
+                } else if (pos == 7 && (win.includes(posX[pos]) && win.includes(posX[pos - 1]) && win.includes(oCell))) {
+                    console.log("else if 4 " + posX[pos - 1])
+                    console.log("else if 4 " + posX[pos])
+                    console.log("else if 4 " + oCell)
+
+                    return oCell;
+                } else {
+                    console.log("else if 6 " + posX[pos])
+                    console.log("else if 7 " + oCell)
+                    if ((win.includes(posX[pos]) && win.includes(posX[pos + 1]) && win.includes(oCell)) || (win.includes(posX[pos]) && win.includes(posX[pos - 1]) && win.includes(oCell)) || (win.includes(posX[pos + 1]) && win.includes(posX[pos - 1]) && win.includes(oCell))) {
+                        return oCell;
+                    }
+                };
+
+            };
+
+
+        };
 
     };
-    console.log()
-
 };
 
 function machineTurn() {
     let emptyCells = [];
     cells.forEach(cell => {
         if (!posX.includes(cell.getAttribute("cell")) && !posO.includes(cell.getAttribute("cell"))) {
+            console.log(cell)
             emptyCells.push(cell);
         }
     });
@@ -110,7 +138,7 @@ function machineTurn() {
     for (cell in emptyCells) {
         emptyCell = emptyCells[cell];
         emptyCellparsed = emptyCell.getAttribute("cell");
-        if (cell = simulateWin(emptyCell, emptyCellparsed)) {
+        if (cell = simulateWin(emptyCells, emptyCellparsed)) {
             elemento = document.querySelector('div[cell="' + cell + '"]');
             elemento.textContent = "O"
             posO.push(emptyCellparsed)
