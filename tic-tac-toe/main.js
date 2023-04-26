@@ -18,22 +18,28 @@ const winner = {
 
 var posX = []
 var posO = []
-
-var wins;
-
+var thinking = false;
+var finished = false;
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+}
 
 function restartGame() {
-    cells.forEach(cell => {
-        cell.innerHTML = ""
-    })
-    cells.innerHTML = ""
-    wins = undefined
-    posX = []
-    posO = []
-    nowTurn = "X";
-    turn.innerHTML = "X's turn"
+    if (!thinking) {
+        cells.forEach(cell => {
+            cell.innerHTML = ""
+        })
+        cells.innerHTML = ""
+        wins = undefined
+        posX = []
+        posO = []
+        nowTurn = "X";
+        turn.innerHTML = "X's turn"
+    };
 
 }
+var wins;
+
 cells.forEach(cell => {
     cell.addEventListener("click", () => {
         if (!wins) {
@@ -42,20 +48,18 @@ cells.forEach(cell => {
                     cell.innerHTML = "X";
                     posX.push(cell.getAttribute("cell"))
                     nowTurn = "O";
-                    turn.innerHTML = "O's turn"
+                    turn.innerHTML = "O está pensando"
                     checkWinner();
-                } else {
-                    cell.innerHTML = "O"
-                    posO.push(cell.getAttribute("cell"))
-                    nowTurn = "X";
-                    turn.innerHTML = "X's turn"
-                    checkWinner();
-
-                }
+                    if (!wins && !finished) {
+                        thinking = true;
+                        machineTurn();
+                    };
+                };
 
             }
         }
-    })
+    });
+
 });
 function checkWinner() {
     let gameLength = posO.length + posX.length;
@@ -73,6 +77,83 @@ function checkWinner() {
     if (gameLength > 8) {
         if (!wins) {
             turn.innerHTML = "Empate"
+            finished = true;
+
         }
     }
 }
+function simulateWin(winnerCell, oCell) {
+    for (i in winner) {
+        let simulated = [];
+        const win = winner[i]
+        for (pos in posX) {
+            if (posX.every(poos => win[i] == poos) && ) {
+                simulated.push(posX[pos])
+            }
+            return oCell;
+        }
+
+    };
+    console.log()
+
+};
+
+function machineTurn() {
+    let emptyCells = [];
+    cells.forEach(cell => {
+        if (!posX.includes(cell.getAttribute("cell")) && !posO.includes(cell.getAttribute("cell"))) {
+            emptyCells.push(cell);
+        }
+    });
+
+
+    for (cell in emptyCells) {
+        emptyCell = emptyCells[cell];
+        emptyCellparsed = emptyCell.getAttribute("cell");
+        if (cell = simulateWin(emptyCell, emptyCellparsed)) {
+            elemento = document.querySelector('div[cell="' + cell + '"]');
+            elemento.textContent = "O"
+            posO.push(emptyCellparsed)
+            nowTurn = "X";
+            turn.innerHTML = "X's turn"
+            thinking = false;
+            checkWinner();
+            salir = true;
+            break
+        };
+        // } else if (win[getRandomInt(3)] == emptyCellparsed) {
+        //     emptyCell.innerHTML = "O"
+        //     console.log(emptyCell);
+
+        //     posO.push(emptyCellparsed)
+        //     nowTurn = "X";
+        //     turn.innerHTML = "X's turn"
+        //     thinking = false;
+        //     checkWinner();
+        //     salir = true;
+        //     break
+        // } else if (win[getRandomInt(3)] == emptyCellparsed) {
+        //     emptyCell.innerHTML = "O"
+        //     console.log(emptyCell);
+
+        //     posO.push(emptyCellparsed)
+        //     nowTurn = "X";
+        //     turn.innerHTML = "X's turn"
+        //     thinking = false;
+        //     checkWinner();
+        //     salir = true;
+        //     break
+        // };
+
+    };
+
+
+
+    // randomCell = emptyCells[Math.floor(Math.random() * emptyCells.length)];
+    // randomCell.innerHTML = "O"
+    // posO.push(randomCell.getAttribute("cell"))
+    // nowTurn = "X";
+    // turn.innerHTML = "X's turn"
+    // thinking = false;
+    // checkWinner();
+};
